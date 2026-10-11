@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "db:generate": "drizzle-kit generate",
     "seed": "tsx scripts/seed.ts",
-    "reset": "tsx scripts/reset.ts && tsx scripts/seed.ts"
+    "reset": "tsx scripts/reset.ts && tsx scripts/seed.ts",
+    "init": "tsx scripts/init.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
