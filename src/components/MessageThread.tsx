@@ -14,7 +14,9 @@ export function ReadMarker({ id, hasUnread }: { id: number; hasUnread: boolean }
 
 export function ScrollBottom() {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => ref.current?.scrollIntoView({ block: "end" }), []);
+  useEffect(() => {
+    ref.current?.scrollIntoView({ block: "end" });
+  }, []);
   return <div ref={ref} />;
 }
 

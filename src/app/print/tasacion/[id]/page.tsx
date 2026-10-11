@@ -5,6 +5,8 @@ import { PrintHeader } from "@/components/PrintHeader";
 import { CONDITIONS, OPERATIONS, PROPERTY_TYPES } from "@/lib/constants";
 import { euros, fmt, parseJsonArray } from "@/lib/format";
 
+export const metadata = { title: "Informe de valoración" };
+
 export default async function PrintValuation({ params }: { params: Promise<{ id: string }> }) {
   const v = db.select().from(schema.valuations).where(eq(schema.valuations.id, Number((await params).id))).get();
   if (!v) notFound();

@@ -5,6 +5,8 @@ import { getProperty } from "@/lib/queries/properties";
 import { CONDITIONS, FEATURES, OPERATIONS, PROPERTY_TYPES } from "@/lib/constants";
 import { euros, m2 } from "@/lib/format";
 
+export const metadata = { title: "Ficha de propiedad" };
+
 export default async function PrintProperty({ params }: { params: Promise<{ id: string }> }) {
   const p = getProperty(Number((await params).id));
   if (!p) notFound();

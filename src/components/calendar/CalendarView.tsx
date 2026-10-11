@@ -294,7 +294,7 @@ export function CalendarView({
                 ))}
                 {HOURS.map((h) => (
                   <div key={h} className="contents">
-                    <div className="h-16 border-b border-line pt-1 pr-2 text-right text-xs text-muted">{pad(h)}:00</div>
+                    <div className="min-h-16 border-b border-line pt-1 pr-2 text-right text-xs text-muted">{pad(h)}:00</div>
                     {days.map((k) => {
                       const evs = (byDay[k] ?? []).filter((e) => !e.allDay && Number(e.start.slice(11, 13)) === h);
                       const earlier = h === 7 ? (byDay[k] ?? []).filter((e) => !e.allDay && Number(e.start.slice(11, 13)) < 7) : [];
@@ -305,7 +305,7 @@ export function CalendarView({
                           onDragOver={(e) => e.preventDefault()}
                           onDrop={(e) => onDrop(e, k, h)}
                           onDoubleClick={() => setEditing({ kind: "reunion", start: `${k}T${pad(h)}:00`, agentId: userId })}
-                          className={clsx("h-16 space-y-0.5 overflow-hidden border-b border-l border-line p-0.5", k === today && "bg-brand-50/30")}
+                          className={clsx("min-h-16 space-y-0.5 border-b border-l border-line p-0.5", k === today && "bg-brand-50/30")}
                         >
                           {[...earlier, ...evs, ...later].map((e) => (
                             <button

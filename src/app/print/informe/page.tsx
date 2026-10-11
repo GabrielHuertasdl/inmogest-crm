@@ -6,6 +6,8 @@ import { dayKey, euros, fmt } from "@/lib/format";
 const MONTHS = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
 const mLabel = (k: string) => MONTHS[Number(k.slice(5, 7)) - 1];
 
+export const metadata = { title: "Informe de actividad" };
+
 export default async function PrintReport({ searchParams }: { searchParams: Promise<Record<string, string | undefined>> }) {
   const u = await requireUser();
   const sp = await searchParams;

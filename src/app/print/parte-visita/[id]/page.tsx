@@ -5,6 +5,8 @@ import { PrintHeader } from "@/components/PrintHeader";
 import { INTEREST_LEVELS, OPERATIONS, PROPERTY_TYPES } from "@/lib/constants";
 import { euros, fmtDateTime } from "@/lib/format";
 
+export const metadata = { title: "Parte de visita" };
+
 export default async function PrintVisit({ params }: { params: Promise<{ id: string }> }) {
   const row = db
     .select({ v: schema.visitReports, p: schema.properties, c: schema.clients, a: schema.users })
