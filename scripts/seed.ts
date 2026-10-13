@@ -33,7 +33,8 @@ const daysFrom = (d: number, h = 10, m = 0) => {
   return x;
 };
 
-const PASSWORD = "REDACTED_DEMO_PASSWORD";
+// Demo password: set SEED_PASSWORD, or a random one is generated and printed below.
+const PASSWORD = process.env.SEED_PASSWORD ?? globalThis.crypto.randomUUID().slice(0, 12);
 const pw = hashPassword(PASSWORD);
 
 // ── agency ─────────────────────────────────────────────
